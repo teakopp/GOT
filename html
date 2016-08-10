@@ -1,0 +1,60 @@
+<title>Game of Thrones Quiz</title>
+
+<head>
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/Users/Tkopp/Documents/workspace/.metadata/GOT/css">
+
+  <script type='text/javascript' src='/Users/Tkopp/Documents/workspace/.metadata/GOT/jss'></script>
+
+
+
+</head>
+
+<body>
+  <h1 id="question">Game Of Thrones Trivia</h1>
+  <form id="myForm" action="" hidden>
+
+    <input type="radio" name="answer" value="1" id="firstChoice">
+    <label id="first">Answer A</label>
+    <br>
+    <input type="radio" name="answer" value="2" id="secondChoice">
+    <label id="second">Answer B</label>
+    <br>
+    <input type="radio" name="answer" value="3" id="thirdChoice">
+    <label id="third">Answer C</label>
+    <br>
+    <input type="radio" name="answer" value="4" id="fourthChoice">
+    <label id="fourth">Answer D</label>
+    <br>
+  </form>
+
+ <div id="login" hidden>
+ <label id ="whatIsName" >What is your name?<br></label>
+ <input type="text" id="enterName">
+ </div>
+
+  <div id="lower" hidden>
+    <h2 id="score"><br></h2>
+    <button type="button" id="next">Next</button>
+    <button type="button" id="submit">Submit</button>
+    <button type="button" id="back">Back</button>
+  </div>
+  <button type="button" id="begin">Begin</button>
+  <h5 id="warning"></h5>
+  <h2 id="scoreNumber"></h2>
+  <h5 id="username" hidden>username</h5>
+
+<label id ="yourName" hidden></label>
+<button id="notMe" hidden>Not Me</button>
+<button id= "retry" hidden>Retry</button>
+</body>
