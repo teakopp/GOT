@@ -21,6 +21,11 @@ button{
   color:black;
 }
 
+#enterName{
+  background-color:transparent;
+  text-align: center;
+}
+
 #myForm {
   text-align: center;
   font-size: 24px;
@@ -33,6 +38,10 @@ h1 {
   color: red;
   letter-spacing: .05em;
 
+}
+
+label{
+  color:clear;
 }
 
 #next {

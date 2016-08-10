@@ -66,8 +66,6 @@ jQuery(document).ready(function() {
 
 
 
-
-
   var userScore = 0;
   var count = 0;
   var amountOfQuestions = ironThrone.length;
@@ -75,10 +73,10 @@ jQuery(document).ready(function() {
   var userAnswer;
   var myjson;
   var arr;
-   var url = "https://api.myjson.com/bins/21lhl";
-   var loggedIn;
-   var userNameLocal = undefined;
-   var difference = 1;
+  var url = "https://api.myjson.com/bins/21lhl";
+  var loggedIn;
+  var userNameLocal = undefined;
+  var difference = 1;
 
 
 function backgroundChangeImage(){
@@ -222,13 +220,13 @@ function loginScreen() {
     	questionEditor();
       $('h1').text(this.almost2);
       $("#warning").hide();
-      $("body").fadeOut(1);
+      $("#myForm").fadeOut(1);
       $("#first").text(ironThrone[count].choices[0]);
       $("#second").text(ironThrone[count].choices[1]);
       $("#third").text(ironThrone[count].choices[2]);
       $("#fourth").text(ironThrone[count].choices[3]);
       $("#myForm").show();
-      $("body").fadeIn(500);
+      $("#myForm").fadeIn(700);
       $("#myForm").trigger('reset');
       userChoiceDisplayed();
 
@@ -280,7 +278,7 @@ function loginScreen() {
   $('#next').on('click', function() {
     $("#warning").hide();
     if (typeof playerAnswers[count] != 'undefined') {
-    $("#myForm").trigger('reset');
+
       count++
       questionChange();
     } else if (typeof playerAnswers[count] == 'undefined') {
