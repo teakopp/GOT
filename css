@@ -1,62 +1,105 @@
 body {
-  color: white;
-   text-shadow:
-      8px 9px 8px #000000,
-      10px 10px 7px rgba(0, 0, 0, 0.2);
+
+
   font-family: Copperplate, Copperplate Gothic Light, fantasy;
-  background: url(/Users/Tkopp/Documents/workspace/.metadata/GOT/images/salt.jpg);
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
+  background: url(/Users/tkopp/GitHub/GOT/images/salt.jpg);
+  background-size:    cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+
+
 }
 
+#question{
+
+  color: #5ab2d8;
+  margin-top: 2%;
+  font-size: 300%;
+  background-color: White;;
+  outline: #5ab2d8 solid thick;
+  margin-left: 20%;
+  margin-right: 20%;
+  /*box-shadow:
+  px 1px 1px Black,
+  1px 1px 1px rgba(0, 0, 0, 0.2);*/
+
+  text-shadow:
+  1px 1px 1px Black,
+  1px 1px 1px rgba(0,0,0, 0.9);
+
+  box-shadow: 8px 8px 8px Black,
+  8px 8px 8px rgba(0,0,0, 0.5);
+}
+
+#all{
+  margin-top: 2%;
+  text-shadow:
+
+  box-shadow: 8px 8px 8px Black,
+  8px 8px 8px rgba(0,0,0, 0.5);
+}
 button{
   color:black;
+  text-align: center;
+
+
 }
 
 #enterName{
-  background-color:transparent;
+  color: #5ab2d8;
   text-align: center;
+  background-color: White;;
+  outline: #5ab2d8 solid thick;
+  margin-left: 20%;
+  margin-right: 20%;
+  /*box-shadow:
+  px 1px 1px Black,
+  1px 1px 1px rgba(0, 0, 0, 0.2);*/
+
+  text-shadow:
+  1px 1px 1px Black,
+  1px 1px 1px rgba(0,0,0, 0.9);
+
+  box-shadow: 8px 8px 8px Black,
+  8px 8px 8px rgba(0,0,0, 0.5);
 }
 
 #myForm {
-  text-align: center;
-  font-size: 24px;
-  letter-spacing: .05em;
+font-size: 32px;
+  color:White;
+  text-shadow:
+
+  1px 1px 1px Red,
+  1px 1px 1px rgba(0, 0, 0, 0.2);
 
 }
 
 h1 {
   text-align: center;
-  color: red;
-  letter-spacing: .05em;
+  color: Red;
+  font-size: 80px;
+  text-shadow:
+
+      1px 1px 1px #000000,
+      1px 1px 1px rgba(0, 0, 0, 0.2);
+
 
 }
 
 label{
   color:clear;
+
+
 }
 
 #next {
-  position: absolute;
   transition: .5s ease;
-  top: 30%;
-  left: 85%;
   font-family: Copperplate, Copperplate Gothic Light, fantasy;
 }
 
 #submit {
-  position: relative;
+  margin-top: 12%;
   transition: .5s ease;
-  top: 30%;
-  left: 48%;
   font-family: Copperplate, Copperplate Gothic Light, fantasy;
 }
 
@@ -65,73 +108,81 @@ label{
 }
 
 #score {
-  position: absolute;
-  top: 50%;
-  left: 38%;
+
+
   transition: .5s ease;
 }
 
 #begin {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
+
+  margin-top: 8%;
   font-family: Copperplate, Copperplate Gothic Light, fantasy;
-  height: 30px;
-  width 30px;
+
 }
 
 #back {
-  position: absolute;
-  transition: .5s ease;
-  top: 30%;
-  right: 85%;
+
   font-family: Copperplate, Copperplate Gothic Light, fantasy;
 }
 
 #warning {
-  position: relative;
-  color: red;
-  text-align: center;
+
+  color: Red;
   font-size: 20px;
 }
 
 #scoreNumber {
-  position: absolute;
+
   color: white;
-  bottom: 30%;
-  left: 45%;
   font-size: 200px;
 
 }
 
 #login{
+  margin-top: 3%;
   font-size: 30px;
-  color:Royalblue;
- text-align: center;
+  color:White;
+  text-align: center;
 
 }
 
 #username{
-  position: absolute;
+
   color: white;
-  bottom: 10%;
-  left: 50%;
+
 }
 
-#retry{
-  position: absolute;
-  bottom: 30%;
-  left: 50%;
+#whatIsName{
+color: White;
+background-color: transparent;
+margin-left: 20%;
+margin-right: 20%;
+/*box-shadow:
+px 1px 1px Black,
+1px 1px 1px rgba(0, 0, 0, 0.2);*/
+
+text-shadow:
+1px 1px 1px Red,
+1px 1px 1px rgba(0,0,0, 0.9);
+
+box-shadow: 8px 8px 8px Black,
+8px 8px 8px rgba(0,0,0, 0.5);
+
+
 }
 
 #yourName{
-  position: absolute;
-  bottom: 43%;
-  left: 43%;
+margin-top: 10%;
+color:SeaGreen;
+text-shadow:
+1px 1px 1px Black,
+1px 1px 1px rgba(0,0,0, 0.9);
+
+box-shadow: 8px 8px 8px Black,
+8px 8px 8px rgba(0,0,0, 0.5);
 }
 
 #notMe{
-  position: absolute;
-  bottom: 40%;
-  left: 48%;
+color:Red;
+
 }

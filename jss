@@ -62,6 +62,12 @@ jQuery(document).ready(function() {
       correctAnswer: 4
     },
 
+    {
+      question: 'Who said “When you play a game of thrones you win or you die.”?',
+      choices: ['Whoops!', 'Something', 'Went', 'Wrong!', ],
+      correctAnswer: 4
+    },
+
   ];
 
 
@@ -73,7 +79,7 @@ jQuery(document).ready(function() {
   var userAnswer;
   var myjson;
   var arr;
-  var url = "https://api.myjson.com/bins/21lhl";
+  var url = "https://api.myjson.com/bins/2f9pl";
   var loggedIn;
   var userNameLocal = undefined;
   var difference = 1;
@@ -218,20 +224,18 @@ function loginScreen() {
 
     if (count >= 0) {
     	questionEditor();
-      $('h1').text(this.almost2);
+      $('#question').text(this.almost2);
       $("#warning").hide();
-      $("#myForm").fadeOut(1);
       $("#first").text(ironThrone[count].choices[0]);
       $("#second").text(ironThrone[count].choices[1]);
       $("#third").text(ironThrone[count].choices[2]);
       $("#fourth").text(ironThrone[count].choices[3]);
-      $("#myForm").show();
-      $("#myForm").fadeIn(700);
-      $("#myForm").trigger('reset');
+      $(".radio").show();
+      $('input[name="answer"]').prop('checked', false);
       userChoiceDisplayed();
-
       if(count > 0){
       $("#notMe").hide();
+
       }
 
     }
@@ -242,17 +246,20 @@ function loginScreen() {
 //shows user their score at end of game
   function scoreScreen() {
     if (count + difference >= ironThrone.length) {
+      $("#question").hide();
       $("h1").css("font-size", "100px");
       $("body").css('background-image','url(https://wallpaperscraft.com/image/game_of_thrones_series_throne_power_sword_2017_1920x1080.jpg)');
       for (i = 0; i < ironThrone.length; i++) {
         if (ironThrone[i].correctAnswer == playerAnswers[i]) {
           userScore += 1;
         }
+        return;
       }
 
       $("label").hide();
       $("input:radio").hide();
       $("#lower").hide();
+      $(".radio").hide();
       $("#warning").hide();
       $("h1").text("Your Score:");
       $("#scoreNumber").text(userScore);
@@ -278,7 +285,6 @@ function loginScreen() {
   $('#next').on('click', function() {
     $("#warning").hide();
     if (typeof playerAnswers[count] != 'undefined') {
-
       count++
       questionChange();
     } else if (typeof playerAnswers[count] == 'undefined') {
@@ -299,14 +305,16 @@ function loginScreen() {
   });
 //adds user's answer to array
   $('#submit').on('click', function() {
-  playerAnswers[count] = $('input[name=answer]:checked', '#myForm').val();
+  playerAnswers[count] = $('.radio input:radio:checked').val();
   if (typeof playerAnswers[count] != 'undefined' && loggedIn == true) {
   $("#warning").text("Submitted!");
   count++
+  scoreScreen();
+  console.log(count + " vs " + ironThrone.length);
   //backgroundChangeImage();
   questionChange();
-  scoreScreen();
   userChoiceDisplayed();
+
 
 
       }
@@ -322,8 +330,10 @@ function loginScreen() {
    $("#yourName").text(userNameLocal);
    $("#yourName").add("#notMe").show()
    logger();
-    }
+   $("#question").show();
 
+    }
+  $(".radio").show();
   $("#yourName").show().text("Logged in as " + userNameLocal);
   });
 
@@ -347,7 +357,7 @@ $("#retry").on('click',function(){
   userNameLocal = undefined;
   loggedIn = false;
   logger();
-  $("#notMe").add("#myForm").add("#yourName").hide();
+  $("#notMe").add(".radio").add("#yourName").hide();
   });
 
 

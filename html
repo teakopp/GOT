@@ -17,9 +17,9 @@
   <!-- Latest compiled JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="/Users/Tkopp/Documents/workspace/.metadata/GOT/css">
+  <link rel="stylesheet" type="text/css" href="/Users/tkopp/GitHub/GOT/css">
 
-  <script type='text/javascript' src='/Users/Tkopp/Documents/workspace/.metadata/GOT/jss'></script>
+  <script type='text/javascript' src='/Users/tkopp/GitHub/GOT/jss'></script>
 
 
 
@@ -27,43 +27,64 @@
 
 <body>
   <div class="container">
-
-
-  <h1 id="question">Game Of Thrones Trivia</h1>
-  <form id="myForm" action="" hidden>
-
-    <input type="radio" name="answer" value="1" id="firstChoice">
-    <label id="first">Answer A</label>
-    <br>
-    <input type="radio" name="answer" value="2" id="secondChoice">
-    <label id="second">Answer B</label>
-    <br>
-    <input type="radio" name="answer" value="3" id="thirdChoice">
-    <label id="third">Answer C</label>
-    <br>
-    <input type="radio" name="answer" value="4" id="fourthChoice">
-    <label id="fourth">Answer D</label>
-    <br>
-  </form>
+    <h1>Game Of Thrones Trivia</h1>
+    <div class="text-center"><button id="begin" type="button"  class ="btn btn-primary" >Begin</button></div>
+<h2 class="text-center collapse" id="question"></h2>
 </div>
 
- <div class="container" id="login" hidden>
- <label id ="whatIsName" >What is your name?</label><br>
- <input type="text" id="enterName">
- </div>
+<div class="radio text-center collapse">
+  <label  id="first">
+  <input type="radio" name="answer" value="1" id="firstChoice">
+  Answer A
+</label>
+</div>
+<div class="radio text-center collapse">
+  <label id="second">
+  <input type="radio" name="answer" value="2" id="secondChoice" checked>
+  Answer B
+  </label>
+</div>
+<div class="radio text-center collapse">
+  <label>
+  <input type="radio" name="answer" value="3" id="thirdChoice">
+  Answer C
+</label>
+</div>
+<div class="radio text-center collapse">
+  <label id="fourth">
+  <input type="radio" name="answer" value="4" id="fourthChoice">
+  Answer D
+</label>
+</div>
 
-  <div id="lower" hidden>
-    <h2 id="score"><br></h2>
-    <button type="button" id="next">Next</button>
-    <button type="button" id="submit">Submit</button>
-    <button type="button" id="back">Back</button>
+<div class ='form-group' id="login" hidden>
+<label id ="whatIsName" >What is your name?</label><br>
+<input type="text" id="enterName">
+
+
+<div id="all" class="row">
+
+<h2 id="score"><br></h2>
+  <div class ='container' id="lower" hidden>
+    <div class="row">
+    <div class="col-md-4 text-center"><button type="button" id="back" class ="btn btn-primary">Back</button></div>
+    <div class="col-md-4 text-center"><button id="submit" type="button" class ="btn btn-primary">Submit</button></div>
+    <div class="col-md-4 text-center"><button id="next" type="button" class ="btn btn-primary">Next</button></div>
   </div>
-  <button type="button" id="begin">Begin</button>
+</div>
+
+<div class="text-center">
   <h5 id="warning"></h5>
   <h2 id="scoreNumber"></h2>
   <h5 id="username" hidden>username</h5>
-
-<label id ="yourName" hidden></label>
-<button id="notMe" hidden>Not Me</button>
+</div>
+<div class="text-center">
+<label id ="yourName" hidden></label><br>
+<button id="notMe" class="collapse btn btn-link" >Not Me</button>
 <button id= "retry" hidden>Retry</button>
+</div>
+</div>
+
+
+</div>
 </body>
