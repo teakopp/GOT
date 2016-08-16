@@ -85,48 +85,7 @@ jQuery(document).ready(function() {
   var difference = 1;
 
 
-function backgroundChangeImage(){
 
-switch(count){
-	case 1:
-  $("body").css('background-image','url(http://i2.cdn.turner.com/cnnnext/dam/assets/150413134252-game-of-thrones-6-super-169.jpg)');
-	break;
-
-  case 2:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  case 3:
-  $("body").css('background-image','url(http://letsgetweddy.com/wp-content/uploads/2015/04/19.jpg)');
-  break;
-
-  case 4:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  case 5:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  case 6:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  case 7:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  case 8:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  case 9:
-  $("body").css('background-image','url(http://i.imgur.com/CWG9cBx.jpg)');
-  break;
-
-  }
-
-}
 
 function getCookie(){
 reg = /name=/i;
@@ -157,24 +116,24 @@ function questionEditor(){
 
 function userChoiceDisplayed() {
     if (typeof playerAnswers[count] != "undefined") {
+      $(".img-responsive").css('box-shadow','none');
       switch (playerAnswers[count]) {
-        case '1':
-          $("#firstChoice").prop("checked", true);
-          break;
+      case '1':
+      $("#one").css('box-shadow', '3px 3px 7px 8px #5ab2d8');
+      break;
 
-        case '2':
-          $("#secondChoice").prop("checked", true);
-          break;
+      case '2':
+      $("#two").css('box-shadow', '3px 3px 7px 8px #5ab2d8');
+      break;
 
-        case '3':
-          $("#thirdChoice").prop("checked", true);
-          break;
+      case '3':
+      $("#three").css('box-shadow', '3px 3px 7px 8px #5ab2d8');
+      break;
 
-        case '4':
-          $("#fourthChoice").prop("checked", true);
-          break;
+      case '4':
+      $("#four").css('box-shadow', '3px 3px 7px 8px #5ab2d8');
+      break;
       }
-       $
        $("#warning").text("Submitted!");
       $("#warning").show();
     }
@@ -187,8 +146,8 @@ function logger (){
   loggedIn = false;
   $('#yourName').show();
   $("#login").show();
-  $("#lower").show();
-  $("#back").add("#next").hide()
+
+
 
       }
   else if (typeof userNameLocal != 'undefined') {
@@ -206,6 +165,9 @@ function logger (){
 	}
 
 
+}
+function getValue() {
+playerAnswers[count] = $(this).val();
 }
 
 function loginScreen() {
@@ -230,9 +192,6 @@ function loginScreen() {
       $("#second").text(ironThrone[count].choices[1]);
       $("#third").text(ironThrone[count].choices[2]);
       $("#fourth").text(ironThrone[count].choices[3]);
-      $(".radio").show();
-      $('input[name="answer"]').prop('checked', false);
-      userChoiceDisplayed();
       if(count > 0){
       $("#notMe").hide();
 
@@ -271,10 +230,26 @@ function loginScreen() {
   }
 
 
+  $(".img-responsive").on('click', function() {
+  $(".img-responsive").css('box-shadow','none');
+  $(this).css('box-shadow', '3px 3px 7px 8px #5ab2d8')
+   playerAnswers[count] = $(this).val();
+   count++;
+   questionChange();
+   $("#question").add("#choices").animate({left: "-=100%"},"slow");
+   $("#question").add("#choices").delay(1000).animate({left: "+=100%"},"slow");
+   $("#question").add("#choices").delay(1000).css('right','100%');
+
+
+
+  });
+
+
 
   $('#begin').on('click', function() {
-
+    $("#submit").show();
     logger();
+    questionChange();
 
 
 
@@ -283,15 +258,14 @@ function loginScreen() {
 
 //Allows user to move to next question after current is answered
   $('#next').on('click', function() {
-    $("#warning").hide();
-    if (typeof playerAnswers[count] != 'undefined') {
+    $(".img-responsive").css('box-shadow','none');
       count++
       questionChange();
-    } else if (typeof playerAnswers[count] == 'undefined') {
-      $('#warning').show();
-      $("#warning").text("Please Submit Answer Before Moving Onto Next Question!");
-      $("#warning").fadeOut(7000);
-    }
+      userChoiceDisplayed();
+
+
+
+
 
   });
 //allows user to move backwwards once first question is answered
@@ -300,30 +274,20 @@ function loginScreen() {
     $('#warning').show();
       count--
       questionChange();
+      userChoiceDisplayed();
+
+
     }
 
   });
 //adds user's answer to array
   $('#submit').on('click', function() {
-  playerAnswers[count] = $('.radio input:radio:checked').val();
-  if (typeof playerAnswers[count] != 'undefined' && loggedIn == true) {
-  $("#warning").text("Submitted!");
-  count++
-  scoreScreen();
-  console.log(count + " vs " + ironThrone.length);
-  //backgroundChangeImage();
-  questionChange();
-  userChoiceDisplayed();
+  // $("#submit").hide();
 
-
-
-      }
-  else if (typeof playerAnswers[count] == 'undefined' && loggedIn == true) {
-  $("#warning").text("Please Submit Answer Before Moving Onto Next Question!");
-  $('#warning').show();
-  $("#warning").fadeOut(7000);
-    }
-  else if (typeof playerAnswers[count] == 'undefined' && loggedIn == false) {
+  $("#choices").show();
+  $("#question").show();
+  $("#lower").show();
+  if (typeof playerAnswers[count] == 'undefined' && loggedIn == false) {
    userNameLocal = $("#enterName").val();
    document.cookie ="name="+userNameLocal.toString();
    $("#login").hide();
@@ -344,7 +308,7 @@ $("#retry").on('click',function(){
   playerAnswers = [];
   $("h1").removeAttr('style');
   $("#scoreNumber").hide();
-  $("#myForm").trigger('reset');
+
   $("label").show();
   $("#lower").show();
   $("input:radio").show();
@@ -353,11 +317,13 @@ $("#retry").on('click',function(){
 });
 
   $("#notMe").on('click', function(){
+
 	document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
   userNameLocal = undefined;
   loggedIn = false;
   logger();
   $("#notMe").add(".radio").add("#yourName").hide();
+  $("#submit").show();
   });
 
 

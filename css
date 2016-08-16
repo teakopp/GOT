@@ -11,14 +11,14 @@ body {
 }
 
 #question{
-
+  position:relative;;
   color: #5ab2d8;
   margin-top: 2%;
   font-size: 300%;
   background-color: White;;
   outline: #5ab2d8 solid thick;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
   /*box-shadow:
   px 1px 1px Black,
   1px 1px 1px rgba(0, 0, 0, 0.2);*/
@@ -65,7 +65,8 @@ button{
 }
 
 #myForm {
-font-size: 32px;
+  padding: 0px;
+  font-size: 75%;
   color:White;
   text-shadow:
 
@@ -87,15 +88,12 @@ h1 {
 }
 
 label{
-  color:clear;
+  color:red;
+
 
 
 }
 
-#next {
-  transition: .5s ease;
-  font-family: Copperplate, Copperplate Gothic Light, fantasy;
-}
 
 #submit {
   margin-top: 12%;
@@ -117,13 +115,25 @@ label{
 
   margin-top: 8%;
   font-family: Copperplate, Copperplate Gothic Light, fantasy;
+  position:relative
 
 }
 
 #back {
+  margin-left: 10%;
+  font-size: 60px;
+  color: White;
+  background-color: transparent;
+  }
 
-  font-family: Copperplate, Copperplate Gothic Light, fantasy;
+
+#next {
+margin-right: 10%;
+font-size: 60px;
+color: White;
+background-color: transparent;
 }
+
 
 #warning {
 
@@ -185,4 +195,12 @@ box-shadow: 8px 8px 8px Black,
 #notMe{
 color:Red;
 
+}
+
+
+#choices{
+  position: relative;
+  margin-top: 6%;
+  margin-left: 20%;
+  margin-right: auto;
 }

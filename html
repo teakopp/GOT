@@ -24,55 +24,131 @@
 
 
 </head>
-
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <h1>Game Of Thrones Trivia</h1>
-    <div class="text-center"><button id="begin" type="button"  class ="btn btn-primary" >Begin</button></div>
-<h2 class="text-center collapse" id="question"></h2>
 </div>
-
-<div class="radio text-center collapse">
-  <label  id="first">
-  <input type="radio" name="answer" value="1" id="firstChoice">
-  Answer A
-</label>
+<div>
+<h2 id="question" class=" text-center collapse"> </h2>
 </div>
-<div class="radio text-center collapse">
-  <label id="second">
-  <input type="radio" name="answer" value="2" id="secondChoice" checked>
-  Answer B
-  </label>
-</div>
-<div class="radio text-center collapse">
-  <label>
-  <input type="radio" name="answer" value="3" id="thirdChoice">
-  Answer C
-</label>
-</div>
-<div class="radio text-center collapse">
-  <label id="fourth">
-  <input type="radio" name="answer" value="4" id="fourthChoice">
-  Answer D
-</label>
-</div>
-
-<div class ='form-group' id="login" hidden>
-<label id ="whatIsName" >What is your name?</label><br>
-<input type="text" id="enterName">
-
-
-<div id="all" class="row">
-
-<h2 id="score"><br></h2>
-  <div class ='container' id="lower" hidden>
-    <div class="row">
-    <div class="col-md-4 text-center"><button type="button" id="back" class ="btn btn-primary">Back</button></div>
-    <div class="col-md-4 text-center"><button id="submit" type="button" class ="btn btn-primary">Submit</button></div>
-    <div class="col-md-4 text-center"><button id="next" type="button" class ="btn btn-primary">Next</button></div>
+<div id="choices" class="row collapse">
+<div class="center-block col-md-6">
+  <input id="one" type="image" class="img-responsive img-rounded" value="1"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+  <div>
+  <label id="first" class="text-center"> Summer is the coolest</label>
   </div>
 </div>
+<div class="col-md-6">
+<input id="two" type="image" class="img-responsive img-rounded" value="2"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div >
+<label id="second"> Summer is the coolest</label>
+</div>
+</div>
+<div class="col-md-6">
+<input id="three" type="image" class="img-responsive img-rounded" value="3"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div>
+<label id="third"> Summer is the coolest</label>
+</div>
+</div>
+<div class="col-md-6">
+<input id="four" type="image" class="img-responsive img-rounded" value="4"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div>
+<label id="fourth">Summer is the coolest</label>
+</div>
+</div>
+</div>
 
+<h2 id="question2" class=" text-center collapse"> </h2>
+</div>
+<div id="choices2" class="row collapse">
+<div class="center-block col-md-6">
+  <input id="one2" type="image" class="img-responsive img-rounded" value="1"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+  <div>
+  <label id="first2" class="text-center"> Summer is the coolest</label>
+  </div>
+</div>
+<div class="col-md-6">
+<input id="two2" type="image" class="img-responsive img-rounded" value="2"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div >
+<label id="second2"> Summer is the coolest</label>
+</div>
+</div>
+<div class="col-md-6">
+<input id="three2" type="image" class="img-responsive img-rounded" value="3"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div>
+<label id="third2"> Summer is the coolest</label>
+</div>
+</div>
+<div class="col-md-6">
+<input id="four2" type="image" class="img-responsive img-rounded" value="4"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div>
+<label id="fourth2">Summer is the coolest</label>
+</div>
+</div>
+</div>
+
+<div id="choices3" class="row collapse">
+<div class="center-block col-md-6">
+  <input id="one3" type="image" class="img-responsive img-rounded" value="1"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+  <div>
+  <label id="first3" class="text-center"> Summer is the coolest</label>
+  </div>
+</div>
+<div class="col-md-6">
+<input id="two3" type="image" class="img-responsive img-rounded" value="2"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div >
+<label id="second3"> Summer is the coolest</label>
+</div>
+</div>
+<div class="col-md-6">
+<input id="three3" type="image" class="img-responsive img-rounded" value="3"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div>
+<label id="third3"> Summer is the coolest</label>
+</div>
+</div>
+<div class="col-md-6">
+<input id="four3" type="image" class="img-responsive img-rounded" value="4"; height="200px" width="200px" src="/Users/tkopp/GitHub/GOT/images/Ghost.jpg"/ >
+<div>
+<label id="fourth3">Summer is the coolest</label>
+</div>
+</div>
+</div>
+
+
+
+<div id="lower" class=" collapse">
+<div>
+<buttton id="next" class="btn btn-default pull-right" type="submit"></button>
+<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+</div>
+<div>
+<buttton id="back" class="btn btn-default pull-left" type="submit"></button>
+<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+</div>
+<br>
+<br>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+</div>
+</div>
+
+<div id="all" class="row">
+ <div class ='form-group' id="login" hidden>
+ <label id ="whatIsName" >What is your name?</label><br>
+ <input type="text" id="enterName">
+ </div>
+</div>
+
+<h2 id="score"><br></h2>
+
+
+
+
+  <div class="text-center"><button type="button" id="submit" class ="btn btn-primary collapse">Submit</button>
 <div class="text-center">
   <h5 id="warning"></h5>
   <h2 id="scoreNumber"></h2>
@@ -83,8 +159,10 @@
 <button id="notMe" class="collapse btn btn-link" >Not Me</button>
 <button id= "retry" hidden>Retry</button>
 </div>
+
+<div class="text-center"><button id="begin" type="button"  class ="btn btn-large" >Begin</button></div>
 </div>
 
 
-</div>
+
 </body>
